@@ -12,6 +12,6 @@ const reducer = (store, action) => {
                 isLogin: true
             };
         default:
-            return state;
+            return store;
     }
 }

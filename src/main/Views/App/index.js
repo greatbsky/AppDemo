@@ -1,9 +1,5 @@
 'use strict';
 
-import React, { Component } from 'react';
-import {
-    View
-} from 'react-native';
 import { connect } from 'react-redux';
 
 import { login } from '../../actions';
@@ -14,7 +10,7 @@ const mapStateToProps = (store) => {
 }
 const mapDispatchToProps = (dispatch) => {
     return {
-        onLogin: (name, pwd) => dispatch(login(name, pwd));
+        onLogin: (name, pwd) => dispatch(login(name, pwd))
     }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(v);
