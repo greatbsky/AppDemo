@@ -2,7 +2,7 @@
 
 import {connect} from 'react-redux';
 
-import {login, save} from '../../actions';
+import {loginAsync} from '../../actions';
 import v from './view';
 
 const mapStateToProps = (store) => {
@@ -11,7 +11,7 @@ const mapStateToProps = (store) => {
 }
 const mapDispatchToProps = (dispatch) => {
     return {
-        onLogin: (name, pwd) => dispatch(login(name, pwd)),
+        onLogin: (name, pwd) => dispatch(loginAsync(name, pwd)),
     }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(v);

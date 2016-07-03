@@ -9,6 +9,7 @@ import {Provider} from 'react-redux';
 import {persistStore, autoRehydrate} from 'redux-persist';
 import reducers from './reducers';
 import codePush from "react-native-code-push";
+import thunk from 'redux-thunk';
 
 import initStore from './conf/InitStore';
 import App from './views/App';
@@ -17,7 +18,7 @@ import Loading from './views/Loading';
 export default class extends Component {
     constructor() {
         super();
-        var middlewares = [];
+        var middlewares = [thunk];
         if (process.env.NODE_ENV === `development`) { //Log only in development
             const logger = require(`redux-logger`)();
             middlewares.push(logger);
@@ -33,7 +34,7 @@ export default class extends Component {
     }
 
     componentDidMount() {
-        codePush.sync(); //If you are using Redux and Redux Saga, you can alternatively use the react-native-code-push-saga module, which allows you to customize when sync is called in simpler/more idiomatic way.
+        //codePush.sync(); //If you are using Redux and Redux Saga, you can alternatively use the react-native-code-push-saga module, which allows you to customize when sync is called in simpler/more idiomatic way.
     }
 
     render() {
