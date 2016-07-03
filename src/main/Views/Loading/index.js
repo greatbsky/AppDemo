@@ -3,10 +3,9 @@
 import React, { Component } from 'react';
 import {
     View,
-    BackAndroid
+    Text
 } from 'react-native';
 
-import Button from '../../components/Button';
 import styles from './style/index.css';
 
 export default class extends Component {
@@ -16,16 +15,12 @@ export default class extends Component {
     }
 
     componentWillMount() {
-        BackAndroid.addEventListener('hardwareBackPress', () => {
-            //this.drawer && this.drawer.closeDrawer();
-            return false;
-        });
     }
 
     render() {
         return (
             <View>
-                <Button onPress={() => this.props.onLogin('great', '123')} label={'登录'+this.props.loginCount}></Button>
+                <Text>Loading...</Text>
             </View>
         );
     }

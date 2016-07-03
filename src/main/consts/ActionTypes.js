@@ -2,5 +2,6 @@
 
 export default {
     login: 'login',
-    logout: 'logout'
+    logout: 'logout',
+    save: 'save',
 }

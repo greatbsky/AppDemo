@@ -1,12 +1,18 @@
 'use strict';
 
 import React, { Component } from 'react';
-import { applyMiddleware, createStore } from 'redux';
-import { Provider } from 'react-redux';
+import {
+    AsyncStorage
+} from 'react-native';
+import {applyMiddleware, createStore, compose} from 'redux';
+import {Provider} from 'react-redux';
+import {persistStore, autoRehydrate} from 'redux-persist';
 import reducers from './reducers';
 import codePush from "react-native-code-push";
 
-import App from './Views/App'
+import initStore from './conf/InitStore';
+import App from './views/App';
+import Loading from './views/Loading';
 
 export default class extends Component {
     constructor() {
@@ -17,8 +23,13 @@ export default class extends Component {
             middlewares.push(logger);
         }
         this.state = {
-            store: createStore(reducers, applyMiddleware(...middlewares)),
+            loading: true,
+            store: createStore(reducers, initStore, compose(
+                applyMiddleware(...middlewares),
+                autoRehydrate(),
+            )),
         };
+        persistStore(this.state.store, {storage: AsyncStorage}, () => {this.setState({loading: false})});
     }
 
     componentDidMount() {
@@ -26,6 +37,9 @@ export default class extends Component {
     }
 
     render() {
+        if (this.state.loading) {
+            return <Loading />
+        }
         return (
             <Provider store={this.state.store}>
                 <App />
