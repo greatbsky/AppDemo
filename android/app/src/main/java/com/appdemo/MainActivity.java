@@ -1,9 +1,12 @@
 package com.appdemo;
 
 import com.facebook.react.ReactActivity;
+import com.brentvatne.react.ReactVideoPackage;
+import com.oblador.vectoricons.VectorIconsPackage;
 import com.microsoft.codepush.react.CodePush;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
+import com.lwansbrough.RCTCamera.*;
 
 import java.util.Arrays;
 import java.util.List;
@@ -44,7 +47,10 @@ public class MainActivity extends ReactActivity {
     @Override
     protected List<ReactPackage> getPackages() {
         return Arrays.<ReactPackage>asList(
+            new RCTCameraPackage(),
             new MainReactPackage(),
+            new ReactVideoPackage(),
+            new VectorIconsPackage(),
             new CodePush("yfcGLQ4P9D8XjRpoScV_0pFT9GhT41gND9Hx8Z", this, BuildConfig.DEBUG)
         );
     }

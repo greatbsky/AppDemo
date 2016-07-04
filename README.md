@@ -11,6 +11,7 @@ E:\MyWork3\AppDemo>react-native run-android
 E:\MyWork3\AppDemo>adb reverse tcp:8081 tcp:8081
 
 E:\MyWork3\AppDemo>npm install rnpm -g
+E:\MyWork3\AppDemo>rnpm link
 E:\MyWork3\AppDemo>npm install -g code-push-cli
 E:\MyWork3\AppDemo>code-push app add AppDemo-Android
 E:\MyWork3\AppDemo>code-push release-react AppDemo-Android android
@@ -19,3 +20,4 @@ E:\MyWork3\AppDemo>code-push debug android
 
 #other
 E:\MyWork3\AppDemo>npm i --save-dev redux-logger
+E:\MyWork3\AppDemo>npm install react-native-camera@https://github.com/lwansbrough/react-native-camera.git --save
