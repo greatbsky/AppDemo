@@ -13,7 +13,7 @@ import thunk from 'redux-thunk';
 
 import initStore from './conf/InitStore';
 import App from './views/App';
-import Loading from './views/Loading';
+import Welcome from './views/Welcome';
 
 export default class extends Component {
     constructor() {
@@ -39,7 +39,7 @@ export default class extends Component {
 
     render() {
         if (this.state.loading) {
-            return <Loading />
+            return <Welcome />
         }
         return (
             <Provider store={this.state.store}>

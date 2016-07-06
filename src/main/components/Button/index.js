@@ -13,8 +13,9 @@ import styles from './style/index.css';
 <Button onPress={} style={} label={}>xxxx</Button>
 */
 export default class extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
+        this.state = Object.assign({}, props, {});
     }
 
     render() {

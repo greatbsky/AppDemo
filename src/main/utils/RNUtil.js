@@ -29,4 +29,16 @@ export default class {
     //           });
     //           */
     // }
+
+    static getData(k) { //todo...
+        return await AsyncStorage.getItem(k);
+    }
+
+    static setData(k, v) { //todo...
+        AsyncStorage.setItem(k, v);
+    }
+
+    static delData(k) { //todo...
+        AsyncStorage.delItem(k);
+    }
 }
