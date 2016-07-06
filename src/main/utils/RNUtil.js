@@ -31,7 +31,7 @@ export default class {
     // }
 
     static getData(k) { //todo...
-        return await AsyncStorage.getItem(k);
+        return AsyncStorage.getItem(k).then((result) => {return result}).catch();
     }
 
     static setData(k, v) { //todo...
