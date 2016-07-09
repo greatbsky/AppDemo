@@ -1,4 +1,4 @@
-'use strict';
+﻿'use strict';
 
 import React, { Component } from 'react';
 import {
@@ -22,11 +22,11 @@ export default class extends Component {
     }
 
     componentWillMount() {
-        BackAndroid.addEventListener('hardwareBackPress', backHandler);
+        BackAndroid.addEventListener('hardwareBackPress', this.backHandler);
     }
 
     componentWillUnmount() {
-        BackAndroid.removeEventListener('hardwareBackPress', backHandler);
+        BackAndroid.removeEventListener('hardwareBackPress', this.backHandler);
     }
 
     backHandler() {
